@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body bg-dark text-light">
+            <h2 class="card-title text-center text-warning mb-4">
+                🎬 {{ movie.title }}
+            </h2>
+
+            <dl class="row">
+                <dt class="col-sm-3 text-end text-muted">Genre</dt>
+                <dd class="col-sm-9 fw-bold">{{ movie.genre }}</dd>
+
+                <dt class="col-sm-3 text-end text-muted">Stock</dt>
+                <dd class="col-sm-9">{{ movie.number_in_stock }}</dd>
+
+                <dt class="col-sm-3 text-end text-muted">Daily Rate</dt>
+                <dd class="col-sm-9">{{ movie.daily_rate }}</dd>
+            </dl>
+
+            <div class="text-center mt-4">
+                <a href="{% url 'movies:index' %}" class="btn btn-outline-warning rounded-pill px-4">
+                    ← Back to Movies
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

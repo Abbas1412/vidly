@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vidly 🎬</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+      body {
+        background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+        color: #f8f9fa;
+        min-height: 100vh;
+      }
+
+      .navbar {
+        background-color: #111 !important;
+      }
+
+      .navbar-brand {
+        color: #ffc107 !important;
+        font-weight: 700;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+      }
+
+      .navbar-brand:hover {
+        color: #ffdb70 !important;
+      }
+
+      footer {
+        margin-top: 60px;
+        text-align: center;
+        color: #aaa;
+        padding: 15px 0;
+        font-size: 0.9rem;
+        border-top: 1px solid #333;
+      }
+
+      main.container {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg shadow-sm">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">🎥 Vidly</a>
+        <div class="d-flex">
+          <a href="/movies/" class="btn btn-outline-warning btn-sm me-2">Movies</a>
+          <a href="/admin/" class="btn btn-outline-light btn-sm">Admin</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+      {% block content %}
+      {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      © {{ now|date:"Y" }} Vidly Movie Rental System — Built with ❤️ using Django
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
